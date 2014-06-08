@@ -17,7 +17,6 @@ var Xdiff=0;
 var Zdiff=0;
 var sprint =false;
 
-
 function getscreensize ()
 {
 	var screenres = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
