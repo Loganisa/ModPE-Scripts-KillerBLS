@@ -14,13 +14,7 @@ s.addBox(-3.0, 1.0, 3, 6 , 9, 3, 0);
 s.addBox(-3.0, 2.0, 2, 6 , 9, 3, 0);
 s.addBox(-3.0, 0, 2, 6 , 9, 3, 0);
 }
-if(glider)
-{
-adden(s,1,4,3,12,1,-0.4,0.4)
-adden(s,-2,4,3,12,-1,-0.4,0.4)
-adden(s,1,2,3,12,1,-0.4,0.4)
-adden(s,-2,2,3,12,-1,-0.4,0.4)
-}
+
 var s = renderer.getModel().getPart("rightArm");
 if(gravigun)
 {
