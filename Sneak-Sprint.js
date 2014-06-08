@@ -149,13 +149,13 @@ function clicklazy(buttonfunction, gui)
 	case 1:					if(sneak == false)
 					{
 						sneak = true;
-						clientMessage("Shift on");
+						clientMessage("Sneak on");
 						Entity.setSneaking(getPlayerEnt(), true);
 					}
 					else if(sneak == true)
 					{
 						sneak = false;
-						clientMessage("Shift off");
+						clientMessage("Sneak off");
 						Entity.setSneaking(getPlayerEnt(),false);
 					}
 		break;
@@ -174,7 +174,7 @@ break;
 }
 function newLevel()
 {
-makeGui (1, "Shift", 80, 40, 0, 80, 0, 0, 0, 1);
+makeGui (1, "Sneak", 80, 40, 0, 80, 0, 0, 0, 1);
 makeGui (2, "Sprint", 90, 50, 0, 0, 0, 0, 0, 2);
 }
 function leaveGame()
