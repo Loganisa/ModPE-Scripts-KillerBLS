@@ -23,5 +23,6 @@ return prop[prop.indexOf(attr) + 1];
 
 function newLevel()
 {
-clientMessage("Welcome, " + ChatColor.GOLD + getOptionAttr("mp_username") + ChatColor.WHITE + "!");
+clientMessage("Welcome, " + ChatColor.BLUE + getOptionAttr("mp_username") + ChatColor.WHITE + "!");
+//ChatColor.RED, BLUE, GOLD, GREEN, YELLOW,....
 }
