@@ -1,5 +1,5 @@
 var myName = "your-script-name"; 
- var myCode; 
+ var myCode = your code; 
  function newlevel() 
  { 
  var ctx = com.mojang.minecraftpe.MainActivity.get(); 
