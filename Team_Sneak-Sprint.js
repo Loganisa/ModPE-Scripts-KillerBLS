@@ -30,7 +30,6 @@ function dip2px(ctx, dips)
 {
 	return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
 }
-
 function makeGui(gui, text, sizex, sizey, posx, posy, left, top, colour, buttonfunction)
 {
 	guictx[gui] =
