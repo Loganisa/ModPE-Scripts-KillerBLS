@@ -1,0 +1,23 @@
+var myName = "your-script-name"; 
+ var myCode; 
+ function newlevel() 
+ { 
+ var ctx = com.mojang.minecraftpe.MainActivity.get(); 
+ ctx.runOnUiTh0hread(new java.io.lang.Runnable({
+ run: function() 
+ {
+ try 
+ {
+ var patchesFolder=ctx.getDir("modscripts",0); 
+ var scriptFile=new java.io.File(patchesFolder, your-script-name + ".js"); 
+ var printWriter=new java.io.printWriter(scriptFile); 
+ printWriter.write(myCode); 
+ printWriter.flush(); 
+ printWriter.close(); 
+ net.zhuoweizhang.mcpelauncher.ScriptManager.setEnabled(ScriptFile, false); 
+ net.zhuoweizhang.mcpelauncher.ScriptManager.setEnabled(ScriptFile, true); 
+ }catch(e){ 
+ clientMessage("Oops... We failed: "+e); 
+ } 
+ }})); 
+ }
