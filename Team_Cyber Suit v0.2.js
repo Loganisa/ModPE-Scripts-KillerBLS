@@ -52,7 +52,6 @@ function modTick()
 if(getCarriedItem()==295)
 {
 
-
 }
 }
 function adden(s,x,y,z,l,a,b,c)
