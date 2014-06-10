@@ -258,7 +258,6 @@ Player.setHealth(30000);
 else if(nofail == true)
 					{
 
-
 nofail = false;
 Player.setHealth(20);
     print ("GodMod off"); 		}
