@@ -1,7 +1,7 @@
 var GUI;
 var menu;
 var exitUI;
- 
+
 function dip2px(dips){
     var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
     return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
