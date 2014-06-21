@@ -1,5 +1,6 @@
 /*
 ChangeMods - this is a great script for Projects MCPE, with it you can make mods for MCPE without knowledge of JavaScript!
+At the moment it does not do anything :)
 */
 
 //Copyright(c) ChangeMods by KillerBLS all rights reserved
