@@ -10,8 +10,9 @@ At the moment it does not do anything :)
 RusJJ - За FileLib
 BeATz-UnKNoWN - За Alert Dialog Builder
 */
- 
 var sdcard = android.os.Environment.getExternalStorageDirectory();
+ 
+var VERSION = "1.0-build_3"
  
 var MRes = android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/games/com.mojang/minecraftResource/";
  
@@ -149,7 +150,7 @@ var file =
  
 function modTick()
 {
-ModPE.showTipMessage("ChangeMods 1.0");
+ModPE.showTipMessage("ChangeMods 1.0-build_3");
 }
  
 function newLevel()
@@ -159,7 +160,7 @@ var SC = new file.select(SRes, "ChangeMods.config");
 file.create(SC);
 var nomedia = new file.select(MRes, ".nomedia");
 file.create(nomedia);
-var SCText = new file.write(SC, "ChangeMods v1.0 by KillerBLS;  version = 1.0; create = true;  change = true; testmode = false;");
+var SCText = new file.write(SC, "ChangeMods v1.0-build_3 by KillerBLS;  version = 1.0-build_3; create = true;  change = true; testmode = false;");
 clientMessage("Спасибо за использования ChangeMods, " + ChatColor.GREEN + getOptionAttr("mp_username") + ChatColor.WHITE + "!");
 clientMessage("Для работы нужен лицензионный ключ, введите его как команду");
 }
@@ -170,7 +171,7 @@ if(cmd == "93P-6V4-99G-J84")
 {
 print("Ключ активирован!");
 print("Ключ активирован!");
-clientMessage("ChangeMods 1.0 by" + ChatColor.GREEN + " KillerBLS");
+clientMessage("ChangeMods 1.0-build_3 by" + ChatColor.GREEN + " KillerBLS");
 var GUI;
     var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
     ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
@@ -183,7 +184,7 @@ var GUI;
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
 var alert = new android.app.AlertDialog.Builder(ctx); 
-alert.setTitle("ChangeMods v1.0"); 
+alert.setTitle("ChangeMods"); 
  
 var scroll = new android.widget.ScrollView(ctx); 
 var layout = new android.widget.LinearLayout(ctx); 
@@ -201,7 +202,6 @@ var params = new android.view.ViewGroup.LayoutParams(-2,-2);
  
 layout.addView(text,params); 
 layout.addView(hidetext,params);
- 
 alert.setView(layout); 
  
 alert.setPositiveButton("Редактировать", new android.content.DialogInterface.OnClickListener(){ 
@@ -211,9 +211,99 @@ var changepos1 = new file.select(hidetext.getText().toString(), "FCH1.js");
 file.read(changepos1);
 //Окно для редактирования
  
+var alert2 = new android.app.AlertDialog.Builder(ctx); 
+alert2.setTitle("ChangeMods"); 
+ 
+var scroll2 = new android.widget.ScrollView(ctx); 
+var layout2 = new android.widget.LinearLayout(ctx); 
+layout2.setOrientation(1);
+ 
+var note2 = new android.widget.TextView(ctx); 
+note2.setText("Выберите функции которые нужно добавить"); 
+note2.setTextColor(android.graphics.Color.WHITE);
+note2.setTextSize(15);
+//Вот сюда уже чекбоксы
+ 
+var checked = false;
+var button = new android.widget.CheckBox(ctx);
+button.setText("Сообщение в чат 'Привет' при входе а мир");
+button.setChecked(checked);
+button.setOnClickListener(new android.view.View.OnClickListener({
+    onClick: function(viewarg){
+        if(!checked){
+            checked = true;
+            file.write(changepos1, "function newLevel() { clientMessage('Привет'); }");
+        }else{
+            checked = false;
+            file.rewrite(changepos1, " ");
+        }
+    }
+}));
+//_________
+ 
+var checked2 = false;
+var button2 = new android.widget.CheckBox(ctx);
+button2.setText("Сообщение в клиенте 'Привет' при входе в мир");
+button2.setChecked(checked2);
+button2.setOnClickListener(new android.view.View.OnClickListener({
+    onClick: function(viewarg){
+        if(!checked2){
+            checked2 = true;
+            file.write(changepos1, "function newLevel() { print('Привет'); }");
+        }else{
+            checked2 = false;
+            file.rewrite(changepos1, " ");
+        }
+    }
+}));
+//_________
+ 
+var checked3 = false;
+var button3 = new android.widget.CheckBox(ctx);
+button3.setText("Добавить сообщение 'Привет' на экран (пример у вас над инвентарем)");
+button3.setChecked(checked3);
+button3.setOnClickListener(new android.view.View.OnClickListener({
+    onClick: function(viewarg){
+        if(!checked3){
+            checked3 = true;
+            file.write(changepos1, "function modTick() { ModPE.showTipMessage('Привет'); }");
+        }else{
+            checked3 = false;
+            file.rewrite(changepos1, " ");
+        }
+    }
+}));
+//_________
+ 
+ 
+//_________
+ 
+var params2 = new android.view.ViewGroup.LayoutParams(-2,-2); 
+ 
+layout2.addView(note2,params2); 
+layout2.addView(button,params2);
+layout2.addView(button2,params2);
+layout2.addView(button3,params2);
+ 
+alert2.setView(layout2); 
+ 
+alert2.setPositiveButton("Применить", new android.content.DialogInterface.OnClickListener(){ 
+  onClick: function(viewarg){
+//#########
       }});
  
-alert.setNegativeButton("Отмена", new android.content.DialogInterface.OnClickListener(){ 
+alert2.setNegativeButton("Отменить", new android.content.DialogInterface.OnClickListener(){ 
+   onClick: function(viewarg){
+   //#########
+      }});
+ 
+var dialog2 = alert2.create();
+dialog2.show();
+ 
+//-----------
+      }});
+ 
+alert.setNegativeButton("Отменить", new android.content.DialogInterface.OnClickListener(){ 
    onClick: function(viewarg){
 print("Отменено");
       }});
