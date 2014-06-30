@@ -1,6 +1,6 @@
 var hX=getPlayerX();
-var pY=getPlayerY();
-var pZ=getPlayerZ();
+var hY=getPlayerY();
+var hZ=getPlayerZ();
 
 function procCmd(cmd)
 {
