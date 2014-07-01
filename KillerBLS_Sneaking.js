@@ -9,7 +9,7 @@ function newLevel(){
             layout.setOrientation(1);
 
             var button = new android.widget.Button(ctx);
-            button.setText("Button");
+            button.setText("Sneak");
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
                     c=true;
