@@ -6,33 +6,36 @@ function dip2px(dips){
     var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
     return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
 }
- 
+
 function newLevel(){
-    print("XRay v1.3");
+    print("X-Ray 1.4 Special for 0x10c-zone.ru");
+    ctx.runOnUiThread(new java.lang.Runnable(){ run: function(){ try{ 
+	}catch(Problem){print("Error: " +Problem);}}});
     var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
     ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
             var layout = new android.widget.LinearLayout(ctx);
             layout.setOrientation(1);
- 
+
             var menuBtn = new android.widget.Button(ctx);
-            menuBtn.setText("XRay Menu");
+            menuBtn.setText("X-Ray Menu");
             menuBtn.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
                     mainMenu();
+                    exit();
                 }
             }));
             layout.addView(menuBtn);
- 
+
             GUI = new android.widget.PopupWindow(layout, android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT, android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT);
             GUI.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
-            GUI.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.BOTTOM, 0, 0);
+            GUI.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.BOTTOM, 20, 20);
         }catch(err){
             print(" " + err);
         }
     }}));
 }
- 
+
 function mainMenu(){
     var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
     ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
@@ -42,13 +45,19 @@ function mainMenu(){
             var menuLayout1 = new android.widget.LinearLayout(ctx);
             menuLayout.setOrientation(1);
             menuLayout1.setOrientation(1);
- 
+
             menuScroll.addView(menuLayout);
             menuLayout1.addView(menuScroll);
-//XRay (all blocks)
-            var checked = false;
+			
+			var heading = new android.widget.TextView(ctx);
+            heading.setTextSize(24);
+            heading.setText("X-Ray v1.4 by KillerBLS and ZmeY2100");
+			heading.setLayoutParams(layoutParams);
+            menuLayout.addView(heading);
+			
+           var checked = false;
 var button = new android.widget.CheckBox(ctx);
-button.setText("Enable XRay (show all blocks)");
+button.setText("Enable X-Ray (show all blocks)");
 button.setChecked(checked);
 button.setOnClickListener(new android.view.View.OnClickListener({
     onClick: function(viewarg){
@@ -257,7 +266,7 @@ menuLayout.addView(button8);
 //---------
 var toggled = false;
 var buttonTog1 = new android.widget.ToggleButton(ctx);
-buttonTog1.setText("Enable/Remove XRay");
+buttonTog1.setText("Enable/Remove X-Ray");
 buttonTog1.setChecked(toggled);
 buttonTog1.setOnClickListener(new android.view.View.OnClickListener({
     onClick: function(viewarg){
@@ -310,47 +319,50 @@ buttonTog1.setOnClickListener(new android.view.View.OnClickListener({
     }
 }));
 menuLayout.addView(buttonTog1);
- 
+
             menu = new android.widget.PopupWindow(menuLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/2, ctx.getWindowManager().getDefaultDisplay().getHeight());
             menu.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.BLACK));
             menu.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 0);
+            
         }catch(error){
             print(" " + error);
         }
     }}));
 }
- 
+
 function exit(){
-    var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
-    ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
+    var ctxe = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+    ctxe.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
-            var xlayout = new android.widget.LinearLayout(ctx);
- 
-            var xbutton = new android.widget.Button(ctx);
-            xbutton.setText("X");
-            xbutton.setTextColor(android.graphics.Color.WHITE);
-            xbutton.setOnClickListener(new android.view.View.OnClickListener({
+            var xLayout = new android.widget.LinearLayout(ctxe);
+
+            var xButton = new android.widget.Button(ctxe);
+            xButton.setText("X");
+            xButton.setTextColor(android.graphics.Color.WHITE);
+            xButton.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
- 
                     exitUI.dismiss();
- 
                     menu.dismiss();
                 }
             }));
-            menuLayout.addView(xbutton);
- 
-            exitUI = new android.widget.PopupWindow(xlayout, dip2px(40), dip2px(40));
+            xLayout.addView(xButton);
+
+            exitUI = new android.widget.PopupWindow(xLayout, dip2px(40), dip2px(40));
             exitUI.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
-            exitUI.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 0);
+            exitUI.showAtLocation(ctxe.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 0);
         }catch(exception){
             print(exception);
         }
     }}));
 }
- 
+
 function leaveGame(){
     var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
     ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
+	if(GUIj != null){ 
+	GUIj.dismiss(); 
+	GUIj = null;	
+	}
         if(GUI != null){
             GUI.dismiss();
             GUI = null;
