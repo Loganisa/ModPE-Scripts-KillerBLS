@@ -1,4 +1,3 @@
-var c;
 var GUI;
 
 function newLevel(){
@@ -12,7 +11,7 @@ function newLevel(){
             button.setText("Sneak");
             button.setOnClickListener(new android.view.View.OnClickListener({
                 onClick: function(viewarg){
-                    c=true;
+                    Entity.setSneaking(getPlayerEnt(),true)
                 }
             }));
             layout.addView(button);
@@ -36,11 +35,3 @@ function leaveGame(){
     }}));
 }
 
-
-function useItem()
-{
-if(c==true)
-{
-Entity.setSneaking(getPlayerEnt(),c=!c);
-}
-}
