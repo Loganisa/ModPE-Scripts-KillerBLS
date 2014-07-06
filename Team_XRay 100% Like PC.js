@@ -2,6 +2,8 @@ var GUI;
 var menu;
 var exitUI;
 
+/* Это не рабочаа версия 1.4 я пытался ее сделать, но не плучилось :c */
+
 function dip2px(dips){
     var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
     return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
