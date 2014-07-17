@@ -28,7 +28,7 @@ I created a GitHub Repo for my ModPE Scripts, so everyone can easily see the cod
 Please don't copy or claim these scripts as your own. You can release your own versions of these scripts, but give me credit and post a link to my forum too.
 
 -
-Перевод на русский
+-
 
 Все мои скрипты используемые BlockLauncher'ом для Minecraft PE 0.8.1 и выше
 
