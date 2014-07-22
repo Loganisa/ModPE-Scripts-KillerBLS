@@ -11,7 +11,7 @@ function newLevel(){
 
 var switched = false;
 var button = new android.widget.Switch(ctx);
-button.setText("Button");
+button.setText("Zoom");
 button.setChecked(switched);
 button.setOnClickListener(new android.view.View.OnClickListener({
  onClick: function(viewarg){
