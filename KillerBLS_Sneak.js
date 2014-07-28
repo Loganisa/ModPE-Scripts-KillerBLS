@@ -1,3 +1,5 @@
+//0.9.5 and 0.8.1
+
 var GUI;
  
 function newLevel(){
