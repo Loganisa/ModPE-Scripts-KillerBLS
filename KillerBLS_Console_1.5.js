@@ -1,20 +1,15 @@
 //Does not work
 
 var GUI;
-var cmd = ">/Command";
+var t_cmd = ">/Command";
 //var closeMSG = "Closed";
-var id = [];
-var count = [];
 var split = " ";
-var time = [];
-var x,y,z;
-var jump = []
-var VERSION = "1.4";
+var VERSION = "1.5";
 var sdcard = android.os.Environment.getExternalStorageDirectory();
 
 
-var ip = Server.getAddress();
-var port = Server.getPort();
+/*var ip = Server.getAddress();
+var port = Server.getPort();*/
 
 var File = java.io.File;
 var FileReader = java.io.FileReader;
@@ -124,88 +119,119 @@ var file =
 };
 
 function procCmd(cmd) {
-	if(cmd=="night") {
+	var cmd = cmd.split(" ");
+	if(cmd[0]=="night") {
 		Level.setTime(14000)
-	} else if(cmd=="day") {
+	} else if(cmd[0]=="day") {
 		Level.setTime(0)
-	} else if(cmd=="gamemode 1") {
+	} else if(cmd[0]=="gamemode") {
+		if(cmd[1]=="1") {
 		Level.setGameMode(1)
-	} else if(cmd=="gamemode 0") {
-		Level.setGameMode(0)
-	} else if(cmd=="heal") {
+		}
+		if(cmd[1]=="0") {
+	        Level.setGameMode(0)
+		}
+	} else if(cmd[0]=="heal") {
 		Player.setHealth(20)
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] You cured!");
-	} else if(cmd=="give " + id + split + count) {
-		Player.addItemInventory(id.toString(),count.toString())
-	} else if(cmd=="Command") {
+	} else if(cmd[0]=="give") {
+		Player.addItemInventory(cmd[1].toString(),cmd[2].toString());
+	} else if(cmd[0]=="Command") {
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Enter the command.");
-	} else if(cmd=="kill") {
+	} else if(cmd[0]=="kill") {
 		Player.setHealth(0)
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] You killed!");
-	} else if(cmd=="god on") {
-		Player.setHealth(99999999999)
+	} else if(cmd[0]=="god") {
+		if(cmd[1]=="on") {
+		Player.setHealth(99999999999);
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] You god!");
-	} else if(cmd=="god off") {
-		Player.setHealth(20)
+		}
+		if(cmd[1]=="off") {
+		Player.setHealth(20);
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] God Mode off!");
-	} else if(cmd=="set time day") {
-		Level.setTime(0)
-	} else if(cmd=="set time night") {
-		Level.setTime(14000)
-	} else if(cmd=="set time " + time) {
-		Level.setTime(time.toString())
-		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Time set to" + split + time);
-	} else if(cmd=="vanish on") {
+		}
+	} else if(cmd[0]=="set") {
+		if(cmd[1]=="time") {
+			if(cmd[2]=="day") {
+			Level.setTime(0)	
+			}
+			if(cmd[2]=="night") {
+			Level.setTime(14000)	
+			}
+		}
+	} else if(cmd[0]=="set") {
+		if(cmd[1]=="time") {
+		Level.setTime(cmd[2].toString())
+		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Time set to" + split + cmd[2].toString());
+		}
+	} else if(cmd[0]=="vanish") {
+		if(cmd[1]=="on") {
 		Entity.setRenderType(getPlayerEnt(),1);
-		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Vanish on!");
-	} else if(cmd=="vanish off") {
-		Entity.setRenderType(getPlayerEnt(),3);
+		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Vanish on!");	
+		}
+                if(cmd[1]=="off") {
+                Entity.setRenderType(getPlayerEnt(),3);
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Vanish off!");
-	} else if(cmd=="tp " + x + split + y + split + z) {
-		setPosition(getPlayerEnt(),x.toString(),y.toString(),z.toString());
-		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Teleported Player to" + split + x + split + y + split + z);
-	} else if(cmd=="gm 1") {
-		Level.setGameMode(1)
-	} else if(cmd=="gm 0") {
-		Level.setGameMode(0)
-	} else if(cmd=="coords") {
+                }
+	} else if(cmd[0]=="tp") {
+		setPosition(getPlayerEnt(),cmd[1].toString(),cmd[2].toString(),cmd[3].toString());
+		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Teleported Player to" + split + cmd[1].toString() + split + cmd[2].toString() + split + cmd[3].toString());
+	} else if(cmd[0]=="gm") {
+		if(cmd[1]=="1") {
+		Level.setGameMode(1)	
+		}
+		if(cmd[1]=="0") {
+		Level.setGameMode(0)	
+		}
+	} else if(cmd[0]=="coords") {
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] You coordinates -" + split + parseInt(getPlayerX()) + split + parseInt(getPlayerY()) + split + parseInt(getPlayerZ()));
-	} else if(cmd=="jump " + jump) {
-		setVelY(getPlayerEnt(),jump.toString());
-	} else if(cmd=="commands list") {
+	} else if(cmd[0]=="jump") {
+		setVelY(getPlayerEnt(),cmd[1].toString());
+	} else if(cmd[0]=="commands") {
 		var list = new file.select(sdcard, "Console_Commands.txt");
 		file.create(list);
-		file.write(list,"[Console] Commands: commands list, get ip, gm 1/0, give, coords, tp, set time, night/day, vanish on/off, jump, help, info, vk, creative/survival, KillerBLS, y0y0y0, WiZARDHAX, 0x10c-zone, god on/off, kill, gamemode 1/0, heal.");
+		file.write(list,"[Console] Commands: commands, get ip, gm 1/0, give, coords, tp, set time, night/day, vanish on/off, jump, help, info, vk, creative/survival, KillerBLS, y0y0y0, WiZARDHAX, 0x10c-zone, god on/off, kill, gamemode 1/0, heal.");
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Commands list saved to sdcard!");
-	} else if(cmd=="info") {
+	} else if(cmd[0]=="info") {
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Console Made by KillerBLS, This Public Beta, version" + split + ChatColor.GREEN + VERSION);
-	} else if(cmd=="vk") {
-		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] http://vk.com/y0_PhilDawggg");
-	} else if(cmd=="creative") {
+	} else if(cmd[0]=="vk") {
+		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Creater - http://vk.com/y0_PhilDawggg");
+	} else if(cmd[0]=="creative") {
 		Level.setGameMode(1)
-	} else if(cmd=="survival") {
+	} else if(cmd[0]=="survival") {
 		Level.setGameMode(0)
-	} else if(cmd=="KillerBLS") {
+	} else if(cmd[0]=="KillerBLS") {
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Made by" + split + ChatColor.GREEN + "KillerBLS");
-	} else if(cmd=="y0y0y0") {
+	} else if(cmd[0]=="y0y0y0") {
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] y0 PhilDawggg!!");
-	} else if(cmd=="WiZARDHAX") {
+	} else if(cmd[0]=="WiZARDHAX") {
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] " + ChatColor.PINK + "www." + ChatColor.GREEN + "WiZARD" + ChatColor.RED + "HAX" + ChatColor.PINK + ".com");
-	} else if(cmd=="0x10c-zone") {
+	} else if(cmd[0]=="0x10c-zone") {
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] http://0x10c-zone.ru/!");
-	} else if(cmd=="") {
+	} else if(cmd[0]=="") {
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Enter the command.");
-	} else if(cmd=="help") {
+	} else if(cmd[0]=="help") {
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] At the moment, does not have a subsidiary Directions.");
-	} else if(cmd=="get ip") {
-		getIp();
+	} else if(cmd[0]=="get") {
+		if(cmd[1]=="ip") {
+		//getIp();
+		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Function is not working because of the stupidity developer :)");
+		}
 	}
 }
 
 function newLevel(){
+	clientMessage("");
+	clientMessage("");
+	clientMessage("");
+	clientMessage("");
+	clientMessage("");
+	clientMessage("");
+	clientMessage("");
+	clientMessage("");
 	clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Console optimized for your device!");
 	clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] So as you can write commands and chatting!");
-	clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Enter ''/commands list'' to get a list of available commands.");
+	clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Enter ''/commands'' to get a list of available commands.");
     var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
     ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
@@ -230,7 +256,8 @@ function newLevel(){
             	note.setTextSize(18);
 
             	var setcmd = new android.widget.EditText(ctx); 
-            	setcmd.setHint(cmd); 
+            	var set_cmd = setcmd.split(" ");
+            	setcmd.setHint(t_cmd); 
 
             	var params = new android.view.ViewGroup.LayoutParams(-2,-2); 
 
@@ -243,6 +270,7 @@ function newLevel(){
             	  onClick: function(viewarg){
                 //console();
                 clientMessage(setcmd.getText().toString());
+                Server.sendChat(setcmd.getText().toString());
             	      }});
 
             	alert.setNegativeButton("Close", new android.content.DialogInterface.OnClickListener(){ 
@@ -275,10 +303,10 @@ function leaveGame(){
     }}));
 }
 
-function getIp() {
+/*function getIp() {
 	if(ip==null) {
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Log in to the server for information.");
 	} else {
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] You play the" + split + ip + port);
 	}
-}
+}*/
