@@ -1,4 +1,4 @@
-//Does not work
+//Does not work ConsoleUI :(
 
 var GUI;
 var t_cmd = ">/Command";
