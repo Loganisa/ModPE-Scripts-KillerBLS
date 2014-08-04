@@ -231,7 +231,7 @@ function procCmd(cmd) {
 		Player.setHealth(cmd[1].toString());
 	} else if(cmd[0]=="clear") {
 		Level.setGameMode(1);
-		clientMessage("Inventory cleaned!");
+		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Inventory cleaned!");
 		Level.setGameMode(0)
 	}
 }
