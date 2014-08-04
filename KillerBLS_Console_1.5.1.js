@@ -4,7 +4,7 @@ var GUI;
 var t_cmd = ">/Command";
 //var closeMSG = "Closed";
 var split = " ";
-var VERSION = "1.5";
+var VERSION = "1.5.1";
 var sdcard = android.os.Environment.getExternalStorageDirectory();
 
 
