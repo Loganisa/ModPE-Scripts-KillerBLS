@@ -188,7 +188,7 @@ function procCmd(cmd) {
 	} else if(cmd[0]=="commands") {
 		var list = new file.select(sdcard, "Console_Commands.txt");
 		file.create(list);
-		file.write(list,"[Console] Commands: commands, get ip, gm 1/0, give, ingite, explode, health, coords, tp, set time, night/day, vanish on/off, jump, help, info, vk, creative/survival, KillerBLS, y0y0y0, WiZARDHAX, 0x10c-zone, god on/off, kill, gamemode 1/0, heal, screenshot.");
+		file.write(list,"[Console] Commands: commands, get ip, gm 1/0, give, ingite, explode, clear, health, coords, tp, set time, night/day, vanish on/off, jump, help, info, vk, creative/survival, KillerBLS, y0y0y0, WiZARDHAX, 0x10c-zone, god on/off, kill, gamemode 1/0, heal, screenshot.");
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Commands list saved to sdcard!");
 	} else if(cmd[0]=="info") {
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Console Made by KillerBLS, This Public Beta, version" + split + ChatColor.GREEN + VERSION);
@@ -229,6 +229,10 @@ function procCmd(cmd) {
 		clientMessage("[" + ChatColor.GREEN + "Console" + ChatColor.WHITE + "] Enter the number of hearts");	
 		}
 		Player.setHealth(cmd[1].toString());
+	} else if(cmd[0]=="clear") {
+		Level.setGameMode(1);
+		clientMessage("Inventory cleaned!");
+		Level.setGameMode(0)
 	}
 }
 
