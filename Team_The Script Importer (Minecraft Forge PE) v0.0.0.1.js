@@ -1,6 +1,6 @@
  var Name = "TheScriptImporter";
  var Code = "function modTick() { clientMessage('Spam!!!'); }" 
- function newlevel()
+ function newLevel()
  {
  var ctx = com.mojang.minecraftpe.MainActivity.get();
  ctx.runOnUiTh0hread(new java.io.lang.Runnable({run: function()
