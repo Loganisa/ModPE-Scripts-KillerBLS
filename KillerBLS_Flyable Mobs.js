@@ -12,6 +12,7 @@ var mob;
 //U D F B L R
  
 function newLevel(){
+ print("Flyable Mobs Mod by KillerBLS");
     var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
     ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
@@ -25,7 +26,7 @@ var button = new android.widget.Button(ctx);
                     switch(event.getAction()){
                         case 0:
                             u = true;
-                                                       d = false;
+                            d = false;
                             f = false;
                             b = false;
                             l = false;
@@ -64,7 +65,7 @@ var button = new android.widget.Button(ctx);
                     switch(event.getAction()){
                         case 0:
                             u = false;
-                                                       d = true;
+                            d = true;
                             f = false;
                             b = false;
                             l = false;
@@ -103,7 +104,7 @@ var button2 = new android.widget.Button(ctx);
                     switch(event.getAction()){
                         case 0:
                             u = false;
-                                                       d = false;
+                            d = false;
                             f = true;
                             b = false;
                             l = false;
@@ -141,7 +142,7 @@ var button2 = new android.widget.Button(ctx);
                     switch(event.getAction()){
                         case 0:
                             u = false;
-                                                       d = false;
+                            d = false;
                             f = false;
                             b = true;
                             l = false;
@@ -179,7 +180,7 @@ var button4 = new android.widget.Button(ctx);
                     switch(event.getAction()){
                         case 0:
                             u = false;
-                                                       d = false;
+                            d = false;
                             f = false;
                             b = false;
                             l = true;
@@ -217,7 +218,7 @@ var button5 = new android.widget.Button(ctx);
                     switch(event.getAction()){
                         case 0:
                             u = false;
-                                                       d = false;
+                            d = false;
                             f = false;
                             b = false;
                             l = false;
