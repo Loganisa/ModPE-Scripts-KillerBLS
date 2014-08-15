@@ -19,7 +19,7 @@ function newLevel(){
             var layout = new android.widget.LinearLayout(ctx);
             layout.setOrientation(1);
  
-var button = new android.widget.Button(ctx);
+            var button = new android.widget.Button(ctx);
             button.setText("U");
             button.setOnTouchListener(new android.view.View.OnTouchListener({
                 onTouch: function(view, event){
@@ -41,9 +41,6 @@ var button = new android.widget.Button(ctx);
             }));
             layout.addView(button);
  
- 
- 
- 
             GUI = new android.widget.PopupWindow(layout, android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT, android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT);
             GUI.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
             GUI.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 0);
@@ -52,13 +49,13 @@ var button = new android.widget.Button(ctx);
         }
     }}));
      
-        var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+    var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
     ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
             var layout = new android.widget.LinearLayout(ctx);
             layout.setOrientation(1);
  
-                        var button1 = new android.widget.Button(ctx);
+            var button1 = new android.widget.Button(ctx);
             button1.setText("D");
             button1.setOnTouchListener(new android.view.View.OnTouchListener({
                 onTouch: function(view, event){
@@ -80,9 +77,6 @@ var button = new android.widget.Button(ctx);
             }));
             layout.addView(button1);
  
- 
- 
- 
             GUI1 = new android.widget.PopupWindow(layout, android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT, android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT);
             GUI1.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
             GUI1.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 80);
@@ -91,13 +85,13 @@ var button = new android.widget.Button(ctx);
         }
     }}));
      
-            var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+    var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
     ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
             var layout = new android.widget.LinearLayout(ctx);
             layout.setOrientation(1);
  
-var button2 = new android.widget.Button(ctx);
+            var button2 = new android.widget.Button(ctx);
             button2.setText("F");
             button2.setOnTouchListener(new android.view.View.OnTouchListener({
                 onTouch: function(view, event){
@@ -118,10 +112,7 @@ var button2 = new android.widget.Button(ctx);
                 }
             }));
             layout.addView(button2);
- 
- 
- 
- 
+            
             GUI2 = new android.widget.PopupWindow(layout, android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT, android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT);
             GUI2.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
             GUI2.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 150);
@@ -130,12 +121,13 @@ var button2 = new android.widget.Button(ctx);
         }
     }}));
      
-                var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+    var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
     ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
             var layout = new android.widget.LinearLayout(ctx);
             layout.setOrientation(1);
-    var button3 = new android.widget.Button(ctx);
+            
+            var button3 = new android.widget.Button(ctx);
             button3.setText("B");
             button3.setOnTouchListener(new android.view.View.OnTouchListener({
                 onTouch: function(view, event){
@@ -157,9 +149,6 @@ var button2 = new android.widget.Button(ctx);
             }));
             layout.addView(button3);
  
- 
- 
- 
             GUI3 = new android.widget.PopupWindow(layout, android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT, android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT);
             GUI3.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
             GUI3.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 220);
@@ -168,12 +157,13 @@ var button2 = new android.widget.Button(ctx);
         }
     }}));
      
-                    var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+    var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
     ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
             var layout = new android.widget.LinearLayout(ctx);
             layout.setOrientation(1);
-var button4 = new android.widget.Button(ctx);
+            
+            var button4 = new android.widget.Button(ctx);
             button4.setText("L");
             button4.setOnTouchListener(new android.view.View.OnTouchListener({
                 onTouch: function(view, event){
@@ -195,9 +185,6 @@ var button4 = new android.widget.Button(ctx);
             }));
             layout.addView(button4);
  
- 
- 
- 
             GUI4 = new android.widget.PopupWindow(layout, android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT, android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT);
             GUI4.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
             GUI4.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 290);
@@ -206,12 +193,13 @@ var button4 = new android.widget.Button(ctx);
         }
     }}));
      
-                        var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+    var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
     ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
         try{
             var layout = new android.widget.LinearLayout(ctx);
             layout.setOrientation(1);
-var button5 = new android.widget.Button(ctx);
+            
+            var button5 = new android.widget.Button(ctx);
             button5.setText("R");
             button5.setOnTouchListener(new android.view.View.OnTouchListener({
                 onTouch: function(view, event){
