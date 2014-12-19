@@ -1,4 +1,5 @@
 function modTick()
 {
-ModPE.showTipMessage("\n\n\n" + "X:" + parseInt(getPlayerX()) + "Y:" + parseInt(getPlayerY()) + "Z:" + parseInt(getPlayerZ()));
+var split = " ";
+ModPE.showTipMessage("\n\n\n" + "X:" + parseInt(getPlayerX()) + split + "Y:" + parseInt(getPlayerY()) + split + "Z:" + parseInt(getPlayerZ()));
 }
