@@ -1,3 +1,2 @@
-Block.defineBlock(2, "Grass", ["grass",3],2,5);
-
-//For 0.9.X - Block.defineBlock(2, "Grass", ["grass",2],2,5);
+Block.defineBlock(2, "Grass", ["grass",2],2,5);
+Block.setDestroyTime(2,0.4);
