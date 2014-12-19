@@ -6,3 +6,11 @@ ModPE.setCamera(victim);
 preventDefault()
 }
 }
+
+function procCmd(cmd)
+{
+  if(cmd=="playerCam")
+  {
+    ModPE.setCamera(getPlaterEnt());
+  }
+}
