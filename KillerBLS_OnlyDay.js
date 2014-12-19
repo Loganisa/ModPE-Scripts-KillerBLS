@@ -1,4 +1,4 @@
 function modTick()
 {
-Level.setTime(0)
+Level.setTime(0);
 }
