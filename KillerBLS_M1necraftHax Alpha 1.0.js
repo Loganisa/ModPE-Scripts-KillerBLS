@@ -58,15 +58,6 @@ var maker = new android.widget.TextView(ctx);
             maker.setGravity(android.view.Gravity.CENTER);
             menuLayout.addView(maker);
              
-            var button = new android.widget.Button(ctx);
-            button.setText("HaxR.Us Site");
-            button.setOnClickListener(new android.view.View.OnClickListener({
-                onClick: function(viewarg){
-          clientMessage(ChatColor.AQUA + "ht" + ChatColor.GREEN + "tp:" + ChatColor.GRAY + "//" + ChatColor.BLUE + "Ha" + ChatColor.GOLD + "xR" + ChatColor.RED + ".Us" + ChatColor.GRAY + "/");
-                }
-            }));
-            menuLayout.addView(button);
-             
 var reg = new android.widget.Button(ctx);
             reg.setText("Register");
        reg.setOnClickListener(new android.view.View.OnClickListener({
