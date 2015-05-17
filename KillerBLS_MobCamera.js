@@ -11,6 +11,6 @@ function procCmd(cmd)
 {
   if(cmd=="playerCam")
   {
-    ModPE.setCamera(getPlaterEnt());
+    ModPE.setCamera(getPlayerEnt());
   }
 }
