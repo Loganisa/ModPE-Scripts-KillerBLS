@@ -27,7 +27,10 @@ var FileOutputStream = java.io.FileOutputStream;
 var Runnable = java.lang.Runnable;
 var Base64 = android.util.Base64;
 
-//Example - Creating Button
+/******************************
+***Example - Creating Button***
+*******************************/
+
 var GUI;
 function newLevel(){
     this.runOnUiThread(new Runnable({ run: function(){
