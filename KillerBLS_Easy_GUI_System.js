@@ -17,6 +17,7 @@ var SeekBar = android.widget.SeekBar;
 var ProgressBar = android.widget.ProgressBar;
 var ToggleButton = android.widget.ToggleButton;
 var Toast = android.widget.Toast;
+var FrameLayout = android.widget.FrameLayout;
 
 //Graphics and View
 var Typeface = android.graphics.Typeface;
@@ -61,6 +62,13 @@ var Handler = android.os.Handler;
 var TextWatcher = android.text.TextWatcher;
 var FileWriter = java.io.FileWriter;
 var InputStreamReader = java.io.InputStreamReader;
+var SpannableStringBuilder = android.text.SpannableStringBuilder;
+var ImageSpan = android.text.style.ImageSpan;
+var Spannable = android.text.Spannable;
+var StringBuffer = java.lang.StringBuffer;
+var Html = android.text.Html;
+var ZipFile = java.util.zip.ZipFile;
+var ByteBuffer = java.nio.ByteBuffer;
 
 //Web
 var URL = java.net.URL;
