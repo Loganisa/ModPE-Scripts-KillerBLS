@@ -72,6 +72,7 @@ var ByteBuffer = java.nio.ByteBuffer;
 var MediaPlayer = android.media.MediaPlayer;
 var String = java.lang.String;
 var StringBuilder = java.lang.StringBuilder;
+var printWriter = java.io.printWriter;
 
 //Web
 var URL = java.net.URL;
