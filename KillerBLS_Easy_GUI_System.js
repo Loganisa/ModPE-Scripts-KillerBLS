@@ -16,6 +16,7 @@ var CompoundButton = android.widget.CompoundButton;
 var SeekBar = android.widget.SeekBar;
 var ProgressBar = android.widget.ProgressBar;
 var ToggleButton = android.widget.ToggleButton;
+var Toast = android.widget.Toast;
 
 //Graphics and View
 var Typeface = android.graphics.Typeface;
@@ -25,6 +26,22 @@ var ColorDrawable = android.graphics.drawable.ColorDrawable;
 var Gravity = android.view.Gravity;
 var BitmapFactory = android.graphics.BitmapFactory;
 var ViewGroup = android.view.ViewGroup;
+var GradientDrawable = android.graphics.drawable.GradientDrawable;
+var Bitmap = android.graphics.Bitmap;
+var Canvas = android.graphics.Canvas;
+var Paint = android.graphics.Paint;
+var Path = android.graphics.Path;
+var LinearGradient = android.graphics.LinearGradient;
+var Shader = android.graphics.Shader;
+var MotionEvent = android.view.MotionEvent;
+var PorterDuff = android.graphics.PorterDuff;
+var BitmapDrawable = android.graphics.drawable.BitmapDrawable;
+var StateListDrawable = android.graphics.drawable.StateListDrawable;
+var ViewTreeObserver = android.view.ViewTreeObserver;
+var TranslateAnimation = android.view.animation.TranslateAnimation;
+var Animation = android.view.animation.Animation;
+var ClipDrawable = android.graphics.drawable.ClipDrawable;
+var LightingColorFilter = android.graphics.LightingColorFilter;
 
 //Other
 var Environment = android.os.Environment;
@@ -34,6 +51,28 @@ var Runnable = java.lang.Runnable;
 var Base64 = android.util.Base64;
 var AlertDialog.Builder = android.app.AlertDialog.Builder;
 var DialogInterface = android.content.DialogInterface;
+var DataOutputStream = java.io.DataOutputStream;
+var BufferedReader = java.io.BufferedReader;
+var Thread = java.lang.Thread;
+var TypedValue = android.util.TypedValue;
+var Byte = java.lang.Byte;
+var Context = android.content.Context;
+var Handler = android.os.Handler;
+var TextWatcher = android.text.TextWatcher;
+var FileWriter = java.io.FileWriter;
+var InputStreamReader = java.io.InputStreamReader;
+
+//Web
+var URL = java.net.URL;
+var WebView = android.webkit.WebView;
+var MalformedURLException = java.net.MalformedURLException;
+
+//BlockLauncher and Mozilla JavaScript
+var ScriptManager = net.zhuoweizhang.mcpelauncher.ScriptManager;
+var Utils = net.zhuoweizhang.mcpelauncher.Utils;
+var PatchManager = net.zhuoweizhang.mcpelauncher.PatchManager;
+var ScriptableObject = org.mozilla.javascript.ScriptableObject;
+
 
 
 /******************************
