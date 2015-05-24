@@ -11,6 +11,11 @@ var TextView = android.widget.TextView;
 var CheckBox = android.widget.CheckBox;
 var Switch = android.widget.Switch;
 var ImageView = android.widget.ImageView;
+var EditText = android.widget.EditText;
+var CompoundButton = android.widget.CompoundButton;
+var SeekBar = android.widget.SeekBar;
+var ProgressBar = android.widget.ProgressBar;
+var ToggleButton = android.widget.ToggleButton;
 
 //Graphics and View
 var Typeface = android.graphics.Typeface;
@@ -19,6 +24,7 @@ var View = android.view.View;
 var ColorDrawable = android.graphics.drawable.ColorDrawable;
 var Gravity = android.view.Gravity;
 var BitmapFactory = android.graphics.BitmapFactory;
+var ViewGroup = android.view.ViewGroup;
 
 //Other
 var Environment = android.os.Environment;
@@ -26,6 +32,9 @@ var File = java.io.File;
 var FileOutputStream = java.io.FileOutputStream;
 var Runnable = java.lang.Runnable;
 var Base64 = android.util.Base64;
+var AlertDialog.Builder = android.app.AlertDialog.Builder;
+var DialogInterface = android.content.DialogInterface;
+
 
 /******************************
 ***Example - Creating Button***
