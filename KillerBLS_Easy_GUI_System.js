@@ -69,6 +69,9 @@ var StringBuffer = java.lang.StringBuffer;
 var Html = android.text.Html;
 var ZipFile = java.util.zip.ZipFile;
 var ByteBuffer = java.nio.ByteBuffer;
+var MediaPlayer = android.media.MediaPlayer;
+var String = java.lang.String;
+var StringBuilder = java.lang.StringBuilder;
 
 //Web
 var URL = java.net.URL;
