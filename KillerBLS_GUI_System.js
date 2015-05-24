@@ -26,3 +26,38 @@ var File = java.io.File;
 var FileOutputStream = java.io.FileOutputStream;
 var Runnable = java.lang.Runnable;
 var Base64 = android.util.Base64;
+
+//Example - Creating Button
+var GUI;
+function newLevel(){
+    this.runOnUiThread(new Runnable({ run: function(){
+        try{
+            var layout = new LinearLayout(this);
+            layout.setOrientation(1);
+
+            var button = new Button(this);
+            button.setText("Button");
+            button.setOnClickListener(new View.OnClickListener({
+                onClick: function(viewarg){
+                    //Your Code;
+                }
+            }));
+            layout.addView(button);
+
+            GUI = new PopupWindow(layout, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+            GUI.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            GUI.showAtLocation(this.getWindow().getDecorView(), Gravity.RIGHT | Gravity.TOP, 0, 0);
+        }catch(err){
+            print("An error occured: " + err);
+        }
+    }}));
+}
+
+function leaveGame(){
+    this.runOnUiThread(new Runnable({ run: function(){
+        if(GUI != null){
+            GUI.dismiss();
+            GUI = null;
+        }
+    }}));
+}
