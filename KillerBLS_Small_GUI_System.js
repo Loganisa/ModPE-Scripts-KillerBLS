@@ -82,6 +82,7 @@ var printWriter = java.io.printWriter;
 
 //Web
 var URL = java.net.URL;
+var Uri = android.net.Uri;
 var WebView = android.webkit.WebView;
 var MalformedURLException = java.net.MalformedURLException;
 
