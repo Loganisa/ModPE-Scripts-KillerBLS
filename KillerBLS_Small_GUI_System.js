@@ -43,6 +43,7 @@ var TranslateAnimation = android.view.animation.TranslateAnimation;
 var Animation = android.view.animation.Animation;
 var ClipDrawable = android.graphics.drawable.ClipDrawable;
 var LightingColorFilter = android.graphics.LightingColorFilter;
+var WindowManager = android.view.WindowManager;
 
 //Other
 var Environment = android.os.Environment;
