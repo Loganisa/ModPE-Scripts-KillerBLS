@@ -115,7 +115,7 @@ function newLevel(){
             }));
             layout.addView(button);
 
-            GUI = new PopupWindow(layout, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+            GUI = new PopupWindow(layout, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             GUI.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             GUI.showAtLocation(ctx.getWindow().getDecorView(), Gravity.RIGHT | Gravity.TOP, 0, 0);
         }catch(err){
